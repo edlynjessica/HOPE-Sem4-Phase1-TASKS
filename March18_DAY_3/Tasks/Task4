@@ -1,0 +1,19 @@
+// TASK 4
+
+2525. Categorize Box According to Criteria { LEETCODE }
+
+class Solution {
+    public String categorizeBox(int length, int width, int height, int mass) {
+        boolean bulky=false;
+        boolean heavy=false;
+        long vol=(long)length*width*height;
+        if(mass>=100) heavy=true;
+        if(length >= 10000 || width >= 10000 || height >= 10000 || vol >= 1_000_000_000L) bulky=true;
+        if(bulky && heavy) return "Both";
+        if(bulky && !heavy) return "Bulky";
+        if(!bulky && heavy) return "Heavy";
+        return "Neither";
+    }
+}
+
+Submission Link: https://leetcode.com/problems/categorize-box-according-to-criteria/submissions/1951915656
