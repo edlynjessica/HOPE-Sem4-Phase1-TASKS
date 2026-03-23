@@ -1,0 +1,15 @@
+// 1822. Sign of the Product of an Array
+
+class Solution {
+    public int arraySign(int[] nums) {
+        int neg=0;
+        for(int i:nums){
+            if(i==0) return 0;
+            if(i<0) neg++;
+        }
+        if(neg%2==0) return 1;
+        else return -1;
+    }
+}
+
+Submission Link:- https://leetcode.com/problems/sign-of-the-product-of-an-array/submissions/1951797061
