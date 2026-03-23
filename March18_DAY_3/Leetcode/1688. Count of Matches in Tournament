@@ -1,0 +1,9 @@
+// 1688. Count of Matches in Tournament
+
+class Solution {
+    public int numberOfMatches(int n) {
+        return n-1;
+    }
+}
+
+Submission Link:- https://leetcode.com/problems/count-of-matches-in-tournament/submissions/1951691687
