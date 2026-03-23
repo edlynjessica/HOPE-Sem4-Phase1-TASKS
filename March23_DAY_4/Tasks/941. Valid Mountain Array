@@ -1,0 +1,26 @@
+// 941. Valid Mountain Array
+
+class Solution {
+    public boolean validMountainArray(int[] arr) {
+        int n=arr.length;
+        if(n<3) return false;
+        int peak=0;
+        // climb up (strictly increasing)
+        int i=0;
+        while(i<n-1 && arr[i]<arr[i+1]){
+            i++;
+        }
+        peak = i;
+
+        // peak can't be first or last 
+        if(peak == 0 || peak == n - 1) return false;
+
+        // go down (strictly decreasing)
+        while(i<n-1 && arr[i]>arr[i+1]){
+            i++;
+        }
+        return i==n-1;
+    }
+}
+
+Submission Link:- https://leetcode.com/problems/valid-mountain-array/submissions/1956750120
