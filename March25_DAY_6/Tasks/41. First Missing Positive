@@ -1,0 +1,20 @@
+// 41. First Missing Positive
+
+import java.util.*;
+
+class Solution {
+    public int firstMissingPositive(int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
+        for (int n : nums) {
+            set.add(n);
+        }
+        for(int i=1;i<100002;i++){
+            if(!set.contains(i)){
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+
+Submission Link:- https://leetcode.com/problems/first-missing-positive/submissions/1959124380
