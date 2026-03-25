@@ -1,0 +1,27 @@
+// TASK 2 - 125. Valid Palindrome {Leetcode}
+
+class Solution {
+    public boolean isPalindrome(String s) {
+        char[] str=s.toCharArray();
+        int left=0;
+        int right=str.length-1;
+        while(left<right){
+            if(!Character.isLetterOrDigit(str[left])){
+                left++;
+                continue;
+            }
+            if(!Character.isLetterOrDigit(str[right])){
+                right--;
+                continue;
+            }
+            if(Character.toLowerCase(str[left])!=Character.toLowerCase(str[right])){
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+}
+
+Submission Link:- https://leetcode.com/problems/valid-palindrome/submissions/1957437081
