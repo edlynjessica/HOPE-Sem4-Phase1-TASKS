@@ -1,0 +1,32 @@
+class SuperKeyword1{
+
+    public SuperKeyword1() {
+        System.out.println("Called in superkeyword1 by super keyword");
+    } 
+    void hello(){
+        System.out.println("Welcome home");
+    }
+}
+class SuperKeyword2 extends SuperKeyword1{
+    public SuperKeyword2(){
+        System.out.println("Called in superkeyword2");
+    }
+    void reject(){
+        System.out.println("I havent called you");
+        super.hello();
+    }
+}
+public class SuperKeyword{
+    public static void main(String[] args) {
+        SuperKeyword2 se=new SuperKeyword2();
+        se.reject();
+    }
+}
+
+/*
+Animal is a cat - no
+Cat is a Animal - yes
+Snake is a Animal - yes
+Teacher is a Student - yes
+Student is a Teacher - yes
+*/
