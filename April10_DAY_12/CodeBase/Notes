@@ -1,0 +1,55 @@
+JCF
+Java Collections Framework which has additional functionalities
+
+Collections -> for dynamic size allocation during runtime
+
+Interface
+    |
+    V
+Collections
+
+-> List  
+* ArrayList
+* LinkedList
+
+-> Set
+* HashSet
+* TreeSet
+* LinkedHashSet
+
+-> Map
+* HashMap
+* TreeMap
+
+-> Queue
+* Deque
+
+List has 2 types:
+1. ArrayList
+2. LinkedList
+
+Memory allocation of ArrayList
+-> Initially the memory of our ArrayList is 10
+
+new ArrayList<>();  [ _ , _ , _ , _ , _ , _ , _ , _ , _ , _ ]
+
+new memory = old memory + (old memory / 2)
+once the memory is full automatically the new memory kicks in
+
+
+ArrayList vs LinkedList
+
+which is faster to access? ArrayList
+while getting an element, which is faster? ArrayList
+which has high memory allocation? ArrayList
+
+
+
+             ArrayList  LL  ArrayList  LL
+             TC         TC     SC      SC
+Insertion    O(1)       O(1)     depends
+Deletion     O(N)       O(N)
+Accessibilty O(1)       O(N)
+Contains     O(N)       O(N)
+isEmpty      O(1)       O(1)
+clear        O(N)       O(N)
