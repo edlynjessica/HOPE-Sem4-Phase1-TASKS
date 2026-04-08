@@ -1,0 +1,59 @@
+// 238. Product of Array Except Self
+
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int n=nums.length;
+        int[] answer=new int[n];
+        // brute
+        /*
+        for(int i=0;i<n;i++){
+            int ans=1;
+            for(int j=0;j<n;j++){
+                if(i!=j) ans*=nums[j];
+            }
+            answer[i]=ans;
+        }
+        return answer;
+        */
+
+        // better
+        /*
+        int prod=1;
+        boolean zero=false;
+        int zeroc=0;
+        for(int i=0;i<n;i++){
+            if(nums[i]!=0)prod*=nums[i];
+            if(nums[i]==0){
+                zero=true;
+                zeroc++;
+            }
+        }
+        if(zeroc==n || zeroc>1) return new int[n];
+        for(int i=0;i<n;i++){
+            if(zero)
+                if(nums[i]!=0) answer[i]=0;
+                else answer[i]=prod;
+            else{
+                answer[i]=prod/nums[i];
+            }
+        }
+        return answer;
+        */
+        
+        // optimal
+
+        answer[0]=1;
+        // from left
+        for(int i=1;i<n;i++){
+            answer[i]=answer[i-1]*nums[i-1];
+        }
+        int right=1;
+        for(int i=n-1;i>=0;i--){
+            answer[i]*=right;
+            right*=nums[i];
+        }
+        return answer;
+    }
+}
+
+Submission Link:- https://leetcode.com/problems/product-of-array-except-self/submissions/1972358271
