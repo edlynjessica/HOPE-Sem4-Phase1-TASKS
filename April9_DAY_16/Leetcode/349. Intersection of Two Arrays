@@ -1,0 +1,22 @@
+// 349. Intersection of Two Arrays
+
+class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        Set<Integer> set=new HashSet<>();
+        Set<Integer> ans=new HashSet<>();
+        for(int i:nums1) set.add(i);
+        for(int i:nums2){
+            if(set.contains(i)) ans.add(i);
+        }
+        int n=ans.size();
+        int i=0;
+        int[] res=new int[n];
+        for(int j:ans){
+            res[i]=j;
+            i++;
+        }
+        return res;
+    }
+}
+
+Submission Link:- https://leetcode.com/problems/intersection-of-two-arrays/submissions/1973196694
