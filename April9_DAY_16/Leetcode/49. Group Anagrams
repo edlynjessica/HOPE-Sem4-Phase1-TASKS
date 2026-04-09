@@ -1,0 +1,17 @@
+// 49. Group Anagrams
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        HashMap<String,List<String>> map=new HashMap<>();
+        for(String s:strs){
+            char[] arr=s.toCharArray();
+            Arrays.sort(arr);
+            String s1=new String(arr);
+            map.putIfAbsent(s1,new ArrayList<>());
+            map.get(s1).add(s);
+        }
+        return new ArrayList<>(map.values());
+    }
+}
+
+Submission Link:- https://leetcode.com/problems/group-anagrams/submissions/1973122399
